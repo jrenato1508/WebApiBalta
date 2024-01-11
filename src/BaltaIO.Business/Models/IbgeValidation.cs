@@ -13,6 +13,11 @@ namespace BaltaIO.Business.Models
             RuleFor(i => i.id)
                     .NotEmpty().WithMessage("O campo {PropertyName} precisa ser fornecido");
 
+            RuleFor(i => i.State)
+                .NotEmpty().WithMessage("O campo {PropertyName} precisa ser fornecido");
+
+            RuleFor(i => i.City)
+                .NotEmpty().WithMessage("O campo {PropertyName} precisa ser fornecido");
 
         }
     }

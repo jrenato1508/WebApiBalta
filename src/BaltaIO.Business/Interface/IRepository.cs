@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BaltaIO.Business.Interface
 {
-    public interface IRepository<TEntity> : IDisposable
+    public interface IRepository<TEntity> : IDisposable where TEntity : class
     {
         Task Adicionar(TEntity entity);
         Task<TEntity> ObterPorId(int id);
