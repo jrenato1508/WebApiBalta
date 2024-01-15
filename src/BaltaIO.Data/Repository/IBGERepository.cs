@@ -27,9 +27,9 @@ namespace BaltaIO.Data.Repository
             return await _dbContext.Cidades.AsNoTracking().FirstOrDefaultAsync(c => c.id == codigo);
         }
 
-        public Task<IBGE> ObterMunicipioPorNome(string nome)
+        public async Task<IBGE> ObterMunicipioPorNome(string nome)
         {
-            throw new NotImplementedException();
+            return await _dbContext.Cidades.AsNoTracking().FirstOrDefaultAsync(c=> c.City == nome);
         }
     }
 }
