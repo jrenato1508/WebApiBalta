@@ -7,6 +7,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Configurar o Automapper, DI, Banco...
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

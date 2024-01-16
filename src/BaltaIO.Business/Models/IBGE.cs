@@ -10,9 +10,10 @@ namespace BaltaIO.Business.Models
     {
         public int id { get; set; }
 
-        public string State { get; set; }
+        public string Codigo { get; set; }
+        public string UF { get; set; }
 
-        public string City { get; set; }
+        public string Cidade { get; set; }
 
     }
 }

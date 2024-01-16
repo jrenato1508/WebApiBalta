@@ -10,13 +10,14 @@ namespace BaltaIO.Business.Models
     public class IbgeValidation : AbstractValidator<IBGE>
     {
         public IbgeValidation() {
-            RuleFor(i => i.id)
+
+            RuleFor(i => i.Codigo)
                     .NotEmpty().WithMessage("O campo {PropertyName} precisa ser fornecido");
 
-            RuleFor(i => i.State)
+            RuleFor(i => i.UF)
                 .NotEmpty().WithMessage("O campo {PropertyName} precisa ser fornecido");
 
-            RuleFor(i => i.City)
+            RuleFor(i => i.Cidade)
                 .NotEmpty().WithMessage("O campo {PropertyName} precisa ser fornecido");
 
         }

@@ -3,6 +3,7 @@ using BaltaIO.Business.Models;
 using BaltaIO.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,12 +25,18 @@ namespace BaltaIO.Data.Repository
         public async Task<IBGE> ObterMunicipioPorCodigoIbge(string codigo)
         {
             // precisamos alterar o ID da class IBGE para código, e fazer a alteração no novo banco.
-            return await _dbContext.Cidades.AsNoTracking().FirstOrDefaultAsync(c => c.id == codigo);
+            return await _dbContext.Cidades.AsNoTracking().FirstOrDefaultAsync(c => c.Codigo == codigo);
         }
 
-        public async Task<IBGE> ObterMunicipioPorNome(string nome)
+        public async Task<IBGE> ObterMunicipioPorNome(string nomeCidade)
         {
-            return await _dbContext.Cidades.AsNoTracking().FirstOrDefaultAsync(c=> c.City == nome);
+            return await _dbContext.Cidades.AsNoTracking().FirstOrDefaultAsync(c=> c.Cidade == nomeCidade);
         }
+
+        public async Task<IEnumerable<IBGE>> ObeterMunicipiosPorUf(string uf)
+        {
+            return await Buscar(c => c.UF == uf);
+        }
+
     }
 }

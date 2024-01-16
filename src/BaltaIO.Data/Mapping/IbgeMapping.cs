@@ -15,13 +15,17 @@ namespace BaltaIO.Data.Mapping
         {
             builder.HasKey(b => b.id);
 
-            builder.Property(b => b.City)
+            builder.Property(b => b.Codigo)
                 .IsRequired()
-                .HasColumnType("char(2)");
+                .HasColumnType("nvarchar(255)");
 
-            builder.Property(b => b.State)
+            builder.Property(b => b.UF)
                 .IsRequired()
-                .HasColumnType("varchar(80)");
+                .HasColumnType("nvarchar(255)");
+
+            builder.Property(b => b.Cidade)
+                .IsRequired()
+                .HasColumnType("nvarchar(255)");
 
             builder.ToTable("IBGE");
         }

@@ -15,6 +15,7 @@ namespace BaltaIO.Business.Interface
 
         Task<IBGE> ObterMunicipioPorCodigoIbge(string codigo);
 
+        Task<IEnumerable<IBGE>> ObeterMunicipiosPorUf(string uf);
 
     }
 }
