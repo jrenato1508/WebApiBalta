@@ -19,21 +19,21 @@ namespace BaltaIO.Data.Repository
 
         public async Task<IBGE> ObtermunicioPorID(int id)
         {
-            return await _dbContext.Cidades.AsNoTracking().FirstOrDefaultAsync(c => c.id == id);
+            return await _dbContext.IBGE.AsNoTracking().FirstOrDefaultAsync(c => c.id == id);
         }
 
         public async Task<IBGE> ObterMunicipioPorCodigoIbge(string codigo)
         {
             // precisamos alterar o ID da class IBGE para código, e fazer a alteração no novo banco.
-            return await _dbContext.Cidades.AsNoTracking().FirstOrDefaultAsync(c => c.Codigo == codigo);
+            return await _dbContext.IBGE.AsNoTracking().FirstOrDefaultAsync(c => c.Codigo == codigo);
         }
 
-        public async Task<IBGE> ObterMunicipioPorNome(string nomeCidade)
+        public async Task<IEnumerable<IBGE>> ObterMunicipioPorNome(string nomeCidade)
         {
-            return await _dbContext.Cidades.AsNoTracking().FirstOrDefaultAsync(c=> c.Cidade == nomeCidade);
+            return await Buscar(c => c.Cidade == nomeCidade);
         }
 
-        public async Task<IEnumerable<IBGE>> ObeterMunicipiosPorUf(string uf)
+        public async Task<IEnumerable<IBGE>> ObterMunicipiosPorUf(string uf)
         {
             return await Buscar(c => c.UF == uf);
         }

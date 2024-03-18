@@ -11,11 +11,11 @@ namespace BaltaIO.Business.Interface
     {
         Task<IBGE> ObtermunicioPorID(int id);
 
-        Task<IBGE> ObterMunicipioPorNome(string nome);
+        Task<IEnumerable<IBGE>> ObterMunicipioPorNome(string nome);
 
         Task<IBGE> ObterMunicipioPorCodigoIbge(string codigo);
 
-        Task<IEnumerable<IBGE>> ObeterMunicipiosPorUf(string uf);
+        Task<IEnumerable<IBGE>> ObterMunicipiosPorUf(string uf);
 
     }
 }

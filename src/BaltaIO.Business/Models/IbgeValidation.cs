@@ -15,10 +15,12 @@ namespace BaltaIO.Business.Models
                     .NotEmpty().WithMessage("O campo {PropertyName} precisa ser fornecido");
 
             RuleFor(i => i.UF)
-                .NotEmpty().WithMessage("O campo {PropertyName} precisa ser fornecido");
+                .NotEmpty().WithMessage("O campo {PropertyName} precisa ser fornecido")
+                .Length(2).WithMessage("O campo {PropertyName} precisa ter 2 carcteres");
 
             RuleFor(i => i.Cidade)
-                .NotEmpty().WithMessage("O campo {PropertyName} precisa ser fornecido");
+                .NotEmpty().WithMessage("O campo {PropertyName} precisa ser fornecido")
+                .Length(2, 50).WithMessage("O campo {PropertyName} precisa ter entre {MinLength} e {MaxLength} caracteres");
 
         }
     }

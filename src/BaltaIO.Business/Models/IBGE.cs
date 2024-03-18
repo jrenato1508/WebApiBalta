@@ -12,7 +12,6 @@ namespace BaltaIO.Business.Models
 
         public string Codigo { get; set; }
         public string UF { get; set; }
-
         public string Cidade { get; set; }
 
     }

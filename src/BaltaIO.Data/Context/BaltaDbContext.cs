@@ -10,10 +10,10 @@ namespace BaltaIO.Data.Context
 {
     public class BaltaDbContext : DbContext
     {
-        public BaltaDbContext(DbContextOptions options) : base(options) 
+        public BaltaDbContext(DbContextOptions<BaltaDbContext> options) : base(options) 
         {
             
         }
-        public DbSet<IBGE> Cidades { get; set; }
+        public DbSet<IBGE> IBGE { get; set; }
     }
 }
